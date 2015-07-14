@@ -1,4 +1,4 @@
-package com.barrunner.lua.gdx;
+package com.barrunner.lua;
 
 import java.io.InputStream;
 

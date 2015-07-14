@@ -1,4 +1,4 @@
-package com.barrunner.lua.libs;
+package com.barrunner.lua;
 
 import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaTable;

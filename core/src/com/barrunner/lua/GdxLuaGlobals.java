@@ -1,4 +1,4 @@
-package com.barrunner.lua.gdx;
+package com.barrunner.lua;
 
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LoadState;
@@ -10,10 +10,6 @@ import org.luaj.vm2.lib.TableLib;
 import org.luaj.vm2.lib.jse.JseBaseLib;
 import org.luaj.vm2.lib.jse.JseIoLib;
 import org.luaj.vm2.lib.jse.JseMathLib;
-
-import com.barrunner.lua.libs.LuaJavaLib;
-import com.barrunner.lua.libs.LuaOSLib;
-import com.barrunner.lua.libs.LuaPackageLib;
 
 public class GdxLuaGlobals extends Globals {
     public GdxLuaGlobals() {

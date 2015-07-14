@@ -1,4 +1,4 @@
-package com.barrunner.lua.libs;
+package com.barrunner.lua;
 
 import java.io.BufferedReader;
 import java.io.IOException;

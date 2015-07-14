@@ -10,7 +10,7 @@ import org.luaj.vm2.lib.jse.JsePlatform;
 import com.badlogic.gdx.Gdx;
 import com.barrunner.Global;
 import com.barrunner.factories.TileHandler;
-import com.barrunner.lua.gdx.GdxLuaGlobals;
+import com.barrunner.lua.GdxLuaGlobals;
 import com.barrunner.model.definitions.EntityDef;
 
 public class Level {

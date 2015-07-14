@@ -1,4 +1,4 @@
-package com.barrunner.lua.libs;
+package com.barrunner.lua;
 import java.io.InputStream;
 
 import org.luaj.vm2.Globals;
