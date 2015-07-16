@@ -27,6 +27,8 @@ public class World {
 	public void update(float delta) {
 		player.update();
 		level.update();
+		
+//		level.load(luaFile);
 	}
 	
 	public void updateVelocity() {

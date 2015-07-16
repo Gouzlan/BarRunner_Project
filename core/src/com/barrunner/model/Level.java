@@ -32,13 +32,13 @@ public class Level {
 	
 	public void load(String luaFile) {
 		backgroundHandlers = new LinkedList<TileHandler>();
-		floorHandlers = new LinkedList<TileHandler>();
-		propHandlers = new LinkedList<TileHandler>();
+		floorHandlers      = new LinkedList<TileHandler>();
+		propHandlers       = new LinkedList<TileHandler>();
 		foregroundHandlers = new LinkedList<TileHandler>();
 
 		try {
 			Globals globals = new GdxLuaGlobals();
-			LuaValue chunk = globals.loadfile(luaFile);
+			LuaValue chunk  = globals.loadfile(luaFile);
 			
 			LuaValue levelLoader      = chunk.call();
 			LuaValue backgroundLoader = levelLoader.get("loadBackground");
@@ -60,16 +60,16 @@ public class Level {
 		this.player = player;
 		
 		EntityDef backgroundDef1 = new EntityDef();
-		backgroundDef1.width  = Global.CAMERA_WIDTH;
-		backgroundDef1.height = Global.CAMERA_HEIGHT;
-		backgroundDef1.typeID = 1;
+		backgroundDef1.width     = Global.CAMERA_WIDTH;
+		backgroundDef1.height    = Global.CAMERA_HEIGHT;
+		backgroundDef1.typeID    = 1;
 		backgroundDef1.xVelocity = BACKGROUND_XVELOCITY/2f;
 		backgroundDef1.frequency = Global.CAMERA_WIDTH;
 		
 		EntityDef backgroundDef2 = new EntityDef();
-		backgroundDef2.width  = Global.CAMERA_WIDTH;
-		backgroundDef2.height = Global.CAMERA_HEIGHT;
-		backgroundDef2.typeID = 0;
+		backgroundDef2.width     = Global.CAMERA_WIDTH;
+		backgroundDef2.height    = Global.CAMERA_HEIGHT;
+		backgroundDef2.typeID    = 0;
 		backgroundDef2.xVelocity = BACKGROUND_XVELOCITY;
 		backgroundDef2.frequency = Global.CAMERA_WIDTH;
 		
@@ -80,15 +80,15 @@ public class Level {
 		backgroundHandlers.addLast(new TileHandler(player, backgroundDef2));
 		
 		EntityDef floorDef1 = new EntityDef();
-		floorDef1.width  = Global.FLOOR_WIDTH;
-		floorDef1.height = Global.FLOOR_HEIGHT;
-		floorDef1.typeID = 1;
+		floorDef1.width     = Global.FLOOR_WIDTH;
+		floorDef1.height    = Global.FLOOR_HEIGHT;
+		floorDef1.typeID    = 1;
 		floorDef1.frequency = Global.FLOOR_HEIGHT;
 		
 		EntityDef floorDef2 = new EntityDef();
-		floorDef2.width  = Global.FLOOR_WIDTH;
-		floorDef2.height = Global.FLOOR_HEIGHT;
-		floorDef2.typeID = 1;
+		floorDef2.width     = Global.FLOOR_WIDTH;
+		floorDef2.height    = Global.FLOOR_HEIGHT;
+		floorDef2.typeID    = 1;
 		floorDef2.frequency = Global.FLOOR_HEIGHT;
 		
 		floorHandlers = new LinkedList<TileHandler>();

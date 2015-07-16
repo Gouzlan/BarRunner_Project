@@ -22,17 +22,8 @@ levelLoader.loadBackground = function(player, backgroundHandlers)
   backgroundDef2.xVelocity = BACKGROUND_XVELOCITY / 2
   backgroundDef2.frequency = Global.CAMERA_WIDTH
   
-  local backgroundDef3 = luajava.new(EntityDef)
-  backgroundDef3.width  = 150
-  backgroundDef3.height = 250
-  backgroundDef3.typeID = 2
-  backgroundDef3.spawnHeight = Global.FLOOR_HEIGHT - 30
-  backgroundDef3.xVelocity = BACKGROUND_XVELOCITY / 2
-  backgroundDef3.frequency = Global.CAMERA_WIDTH / 2
-  
   backgroundHandlers:addLast(luajava.new(TileHandler, player, backgroundDef1));
   backgroundHandlers:addLast(luajava.new(TileHandler, player, backgroundDef2));
-  backgroundHandlers:addLast(luajava.new(TileHandler, player, backgroundDef3));
 end
 
 levelLoader.loadFloor = function(player, floorHandlers)
@@ -48,7 +39,7 @@ levelLoader.loadFloor = function(player, floorHandlers)
   floorDef2.typeID    = 1
   floorDef2.frequency = Global.FLOOR_HEIGHT
 
-  floorHandlers:addLast(luajava.new(TileHandler, player, floorDef1))    
+  floorHandlers:addLast(luajava.new(TileHandler, player, floorDef1))   
 end
 
 levelLoader.loadProp = function(player, propHandlers)
@@ -105,7 +96,18 @@ levelLoader.loadForegound = function(player, foregroundHandlers)
     foregroundDef2.height = 178
     foregroundDef2.spawnHeight = Global.CAMERA_HEIGHT - foregroundDef2.height
     foregroundDef2.typeID = 0
-    foregroundHandlers:addLast(luajava.new(TileHandler, player, foregroundDef1))    
+    
+    local foregroundDef3 = luajava.new(EntityDef)
+    foregroundDef3.width  = 150
+    foregroundDef3.height = 250
+    foregroundDef3.typeID = 2
+    foregroundDef3.spawnHeight = Global.FLOOR_HEIGHT - 40
+    foregroundDef3.xVelocity = BACKGROUND_XVELOCITY / 2
+    foregroundDef3.frequency = Global.CAMERA_WIDTH   
+
+    foregroundHandlers:addLast(luajava.new(TileHandler, player, foregroundDef1)) 
+    foregroundHandlers:addLast(luajava.new(TileHandler, player, foregroundDef2))
+    foregroundHandlers:addLast(luajava.new(TileHandler, player, foregroundDef3)) 
 end
 
 return levelLoader
