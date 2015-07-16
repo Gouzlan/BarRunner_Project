@@ -22,8 +22,18 @@ levelLoader.loadBackground = function(player, backgroundHandlers)
   backgroundDef2.xVelocity = BACKGROUND_XVELOCITY / 2
   backgroundDef2.frequency = Global.CAMERA_WIDTH
   
+  local backgroundDef3 = luajava.new(EntityDef)
+  backgroundDef3.width  = 150
+  backgroundDef3.height = 250
+  backgroundDef3.typeID = 2
+  backgroundDef3.spawnHeight = Global.FLOOR_HEIGHT - 40
+  backgroundDef3.xVelocity = 0
+  backgroundDef3.frequency = Global.CAMERA_WIDTH * 2
+  backgroundDef3.offset = Global.CAMERA_WIDTH / 2
+  
   backgroundHandlers:addLast(luajava.new(TileHandler, player, backgroundDef1));
   backgroundHandlers:addLast(luajava.new(TileHandler, player, backgroundDef2));
+  backgroundHandlers:addLast(luajava.new(TileHandler, player, backgroundDef3));
 end
 
 levelLoader.loadFloor = function(player, floorHandlers)
@@ -49,7 +59,6 @@ levelLoader.loadProp = function(player, propHandlers)
     propDef1.spawnHeight = Global.FLOOR_HEIGHT - 20
     propDef1.typeID = 0
     propDef1.frequency = 3072
---    propDef1.offset = 0;
     
     local propDef2 = luajava.new(EntityDef)
     propDef2.width  = 624
@@ -102,8 +111,8 @@ levelLoader.loadForegound = function(player, foregroundHandlers)
     foregroundDef3.height = 250
     foregroundDef3.typeID = 2
     foregroundDef3.spawnHeight = Global.FLOOR_HEIGHT - 40
-    foregroundDef3.xVelocity = BACKGROUND_XVELOCITY / 2
-    foregroundDef3.frequency = Global.CAMERA_WIDTH   
+    foregroundDef3.xVelocity = 0
+    foregroundDef3.frequency = Global.CAMERA_WIDTH
 
     foregroundHandlers:addLast(luajava.new(TileHandler, player, foregroundDef1)) 
     foregroundHandlers:addLast(luajava.new(TileHandler, player, foregroundDef2))

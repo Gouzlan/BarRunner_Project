@@ -13,6 +13,8 @@ public class Global {
 	/* Floor size information */
 	public static final int FLOOR_WIDTH  = 64;
 	public static final int FLOOR_HEIGHT = 64;
+//	public static final int FLOOR_WIDTH  = 2048;
+//	public static final int FLOOR_HEIGHT = 64;
 	
 	/* Velocity information */
 	//Want this to be a variable not a constant in the future

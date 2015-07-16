@@ -3,7 +3,6 @@ package com.barrunner.view;
 
 import java.util.LinkedList;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -33,12 +32,12 @@ public class LevelRenderer {
 		this.level = level;
 		this.batch = batch;
 		floorTextures 	   = new Texture[2];
-		backgroundTextures = new Texture[2];
+		backgroundTextures = new Texture[3];
 		foregroundTextures = new Texture[3];
 		propTextures 	   = new Texture[3];
 		
 		floorRegions	   = new TextureRegion[2];
-		backgroundRegions  = new TextureRegion[2];
+		backgroundRegions  = new TextureRegion[3];
 		foregroundRegions  = new TextureRegion[3];
 		propRegions		   = new TextureRegion[3];
 		
@@ -46,17 +45,20 @@ public class LevelRenderer {
 		//HardCoded textures for now
 		floorTextures[0]      = new Texture("floors/ground.png");
 		floorTextures[1]      = new Texture("floors/ground_inverted.png");
+//		floorTextures[1]      = new Texture("floors/floor.png");
 		floorRegions[0]       = new TextureRegion(floorTextures[0]);
 		floorRegions[1]       = new TextureRegion(floorTextures[1]);
 		
 		backgroundTextures[0] = new Texture("backgrounds/smoke.png");
 		backgroundTextures[1] = new Texture("backgrounds/trippy.png");
+		backgroundTextures[2] = new Texture("silhouettes/bannana.png");
 		backgroundRegions[0]  = new TextureRegion(backgroundTextures[0]);
 		backgroundRegions[1]  = new TextureRegion(backgroundTextures[1]);
+		backgroundRegions[2]  = new TextureRegion(backgroundTextures[2]);
 		
 		foregroundTextures[0] = new Texture("props/light1.png");
 		foregroundTextures[1] = new Texture("props/pooltable1.png");
-		foregroundTextures[2] = new Texture("silhouettes/bannana.png");
+		foregroundTextures[2] = new Texture("silhouettes/double_fist.png");
 		foregroundRegions[0]  = new TextureRegion(foregroundTextures[0]);
 		foregroundRegions[1]  = new TextureRegion(foregroundTextures[1]); 
 		foregroundRegions[2]  = new TextureRegion(foregroundTextures[2]);
