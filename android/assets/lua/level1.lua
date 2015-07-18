@@ -62,7 +62,7 @@ levelLoader.loadProp = function(player, propHandlers)
     
     local propDef2 = luajava.new(EntityDef)
     propDef2.width  = 624
-    propDef2.height = 334
+    propDef2.height = 145
     propDef2.spawnHeight = Global.FLOOR_HEIGHT - 20
     propDef2.typeID = 1
     propDef2.frequency = 3072

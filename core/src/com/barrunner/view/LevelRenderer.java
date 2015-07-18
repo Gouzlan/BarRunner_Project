@@ -57,14 +57,14 @@ public class LevelRenderer {
 		backgroundRegions[2]  = new TextureRegion(backgroundTextures[2]);
 		
 		foregroundTextures[0] = new Texture("props/light1.png");
-		foregroundTextures[1] = new Texture("props/pooltable1.png");
+		foregroundTextures[1] = new Texture("props/pool_table1.png");
 		foregroundTextures[2] = new Texture("silhouettes/double_fist.png");
 		foregroundRegions[0]  = new TextureRegion(foregroundTextures[0]);
 		foregroundRegions[1]  = new TextureRegion(foregroundTextures[1]); 
 		foregroundRegions[2]  = new TextureRegion(foregroundTextures[2]);
 		
-		propTextures[0] = new Texture("props/bar2.png");
-		propTextures[1] = new Texture("props/bar3.png");
+		propTextures[0] = new Texture("props/bar1.png");
+		propTextures[1] = new Texture("props/bar2.png");
 		propTextures[2] = new Texture("props/light1.png");
 		propRegions[0]  = new TextureRegion(propTextures[0]);
 		propRegions[1]  = new TextureRegion(propTextures[1]);		
