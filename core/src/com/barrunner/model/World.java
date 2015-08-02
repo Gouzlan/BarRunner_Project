@@ -16,19 +16,12 @@ public class World {
 
 	public World() {
 		player = new Player();
-		level = new Level(player, "lua/level1.lua");
-		
-//		level = new Level(player);
-//		level.load("lua/level1.lua");
+		level = new Level(player);
 	}
 
-	private int timer = 0;
-	public static int time = 100;
 	public void update(float delta) {
 		player.update();
 		level.update();
-		
-//		level.load(luaFile);
 	}
 	
 	public void updateVelocity() {

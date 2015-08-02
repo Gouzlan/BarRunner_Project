@@ -2,15 +2,8 @@ package com.barrunner.model;
 
 import java.util.LinkedList;
 
-import org.luaj.vm2.Globals;
-import org.luaj.vm2.LuaValue;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-import org.luaj.vm2.lib.jse.JsePlatform;
-
-import com.badlogic.gdx.Gdx;
 import com.barrunner.Global;
 import com.barrunner.factories.TileHandler;
-import com.barrunner.lua.GdxLuaGlobals;
 import com.barrunner.model.definitions.EntityDef;
 
 public class Level {
@@ -24,36 +17,7 @@ public class Level {
 	private LinkedList<TileHandler> floorHandlers;
 	private LinkedList<TileHandler> propHandlers;
 	private LinkedList<TileHandler> foregroundHandlers;
-	
-	public Level(Player player, String luaFile) {
-		this.player = player;
-		load(luaFile);
-	}
-	
-	public void load(String luaFile) {
-		backgroundHandlers = new LinkedList<TileHandler>();
-		floorHandlers      = new LinkedList<TileHandler>();
-		propHandlers       = new LinkedList<TileHandler>();
-		foregroundHandlers = new LinkedList<TileHandler>();
 
-		try {
-			Globals globals = new GdxLuaGlobals();
-			LuaValue chunk  = globals.loadfile(luaFile);
-			
-			LuaValue levelLoader      = chunk.call();
-			LuaValue backgroundLoader = levelLoader.get("loadBackground");
-			LuaValue floorLoader      = levelLoader.get("loadFloor");
-			LuaValue propLoader       = levelLoader.get("loadProp");
-			LuaValue foregroundLoader = levelLoader.get("loadForegound");
-			
-			backgroundLoader.invoke(CoerceJavaToLua.coerce(player), CoerceJavaToLua.coerce(backgroundHandlers));
-			floorLoader.invoke(CoerceJavaToLua.coerce(player), CoerceJavaToLua.coerce(floorHandlers));
-			propLoader.invoke(CoerceJavaToLua.coerce(player), CoerceJavaToLua.coerce(propHandlers));
-			foregroundLoader.invoke(CoerceJavaToLua.coerce(player), CoerceJavaToLua.coerce(foregroundHandlers));
-		} catch (Exception ex) {
-			Gdx.app.log("Level", "could not load " + luaFile);
-		}
-	}
 	/* Constructors */
 	
 	public Level (Player player) {
